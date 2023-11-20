@@ -40,9 +40,18 @@ cartFormElement.addEventListener('submit', (event) => {
 
     const cartAmountInputElement = document.getElementById('cart-amount')
     const numberInCartSpanElement = document.getElementById('number-in-cart')
-    const sum = Number(numberInCartSpanElement.textContent) + cartAmount
-    numberInCartSpanElement.textContent = sum
+   
+    if(isNaN(Number(cartAmountInput.value))) {
+        alert("Error: That's NOT a number! Please try again!")
+    }
+    else{
+        const sum = Number(numberInCartSpanElement.textContent) + Number(cartAmountInputElement.value)
+        numberInCartSpanElement.textContent = sum
+    }
+
+    cartFormElement.reset()
 })
+
 
 
 
